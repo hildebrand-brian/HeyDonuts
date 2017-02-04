@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rw8-l3-SJB">
-                                <rect key="frame" x="127.5" y="273.5" width="120" height="120"/>
+                                <rect key="frame" x="127" y="91" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Cvw-9R-Voz"/>
                                     <constraint firstAttribute="width" constant="120" id="PA7-OV-Lmh"/>
@@ -110,15 +110,35 @@
                                     <segue destination="U45-Lg-ojY" kind="show" identifier="channelsSegue" id="zhh-ke-4jP"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8X-fp-fi6">
+                                <rect key="frame" x="27.5" y="310" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="QMi-jl-1sk" id="cTy-2p-o9I"/>
+                                    <outlet property="delegate" destination="QMi-jl-1sk" id="p1L-XQ-06B"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which team gets your donuts?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbj-dd-u6e">
+                                <rect key="frame" x="71" y="290" width="233" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="x8X-fp-fi6" firstAttribute="top" secondItem="zbj-dd-u6e" secondAttribute="bottom" constant="-1" id="3VV-Lz-EeM"/>
                             <constraint firstItem="0nk-Sd-Awx" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="4Hu-GO-aMC"/>
+                            <constraint firstItem="rw8-l3-SJB" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="Htg-sb-XJV"/>
                             <constraint firstItem="LfZ-aF-G5S" firstAttribute="top" secondItem="0nk-Sd-Awx" secondAttribute="bottom" constant="35" id="STi-l1-dzv"/>
-                            <constraint firstItem="rw8-l3-SJB" firstAttribute="centerY" secondItem="Hgn-jY-BF4" secondAttribute="centerY" id="bgs-1z-nAY"/>
-                            <constraint firstItem="rw8-l3-SJB" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="uxH-PF-fsX"/>
+                            <constraint firstItem="zbj-dd-u6e" firstAttribute="top" secondItem="rw8-l3-SJB" secondAttribute="bottom" constant="79" id="aA1-ER-txu"/>
+                            <constraint firstItem="x8X-fp-fi6" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="bT4-CL-mWy"/>
+                            <constraint firstItem="rw8-l3-SJB" firstAttribute="top" secondItem="xXd-8M-dRx" secondAttribute="bottom" constant="71" id="lxy-ct-Qcf"/>
+                            <constraint firstItem="zbj-dd-u6e" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="sdg-Zx-a5i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="channelPicker" destination="x8X-fp-fi6" id="Tby-Kk-DGB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFZ-oC-4Xi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,48 +156,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r5u-Dg-h41">
-                                <rect key="frame" x="67" y="154" width="240" height="395"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="channelsCell" id="U8r-2D-bJb">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U8r-2D-bJb" id="wYC-8o-xLD">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="U45-Lg-ojY" id="zBt-L8-ZP4"/>
-                                    <outlet property="delegate" destination="U45-Lg-ojY" id="7Hw-mt-0AD"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-3r-LLR">
                                 <rect key="frame" x="151.5" y="75" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pD1-uf-G4e">
+                                <rect key="frame" x="27.5" y="152" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="U45-Lg-ojY" id="9uj-mY-wd7"/>
+                                    <outlet property="delegate" destination="U45-Lg-ojY" id="LFG-xF-i8Q"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVC-xp-Ni3">
+                                <rect key="frame" x="152" y="492" width="70" height="30"/>
+                                <state key="normal" title="Subscribe"/>
+                                <connections>
+                                    <action selector="subscribeButton:" destination="U45-Lg-ojY" eventType="touchUpInside" id="FoG-eN-1zD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r5u-Dg-h41" firstAttribute="centerX" secondItem="a3g-3i-FfI" secondAttribute="centerX" id="4VO-IG-1xW"/>
-                            <constraint firstItem="r5u-Dg-h41" firstAttribute="top" secondItem="Ec6-3r-LLR" secondAttribute="bottom" constant="58" id="9Sc-MB-vQn"/>
-                            <constraint firstItem="q7Y-5a-wyC" firstAttribute="top" secondItem="r5u-Dg-h41" secondAttribute="bottom" constant="118" id="ITP-Lx-9Mt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="r5u-Dg-h41" secondAttribute="trailing" constant="52" id="Wj5-n8-as2"/>
+                            <constraint firstItem="q7Y-5a-wyC" firstAttribute="top" secondItem="lVC-xp-Ni3" secondAttribute="bottom" constant="145" id="UxL-rr-SjK"/>
+                            <constraint firstItem="pD1-uf-G4e" firstAttribute="top" secondItem="Ec6-3r-LLR" secondAttribute="bottom" constant="56" id="WJN-eV-fgS"/>
                             <constraint firstItem="Ec6-3r-LLR" firstAttribute="centerX" secondItem="a3g-3i-FfI" secondAttribute="centerX" id="b0p-1k-Ng6"/>
+                            <constraint firstItem="pD1-uf-G4e" firstAttribute="centerX" secondItem="a3g-3i-FfI" secondAttribute="centerX" id="cKG-4i-lEC"/>
                             <constraint firstItem="Ec6-3r-LLR" firstAttribute="top" secondItem="olB-Y4-flP" secondAttribute="bottom" constant="55" id="drK-Pw-AlD"/>
+                            <constraint firstItem="lVC-xp-Ni3" firstAttribute="centerX" secondItem="a3g-3i-FfI" secondAttribute="centerX" id="xsm-RU-u81"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="channelsTable" destination="r5u-Dg-h41" id="FTr-ai-oJA"/>
+                        <outlet property="channelsPicker" destination="pD1-uf-G4e" id="Kyj-mC-TyT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hcj-3Z-42D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="986"/>
+            <point key="canvasLocation" x="957.60000000000002" y="985.45727136431788"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3A1-gx-gIV">

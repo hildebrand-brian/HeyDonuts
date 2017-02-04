@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import FirebaseMessaging
 
-class ChannelsViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ChannelsViewController : UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var channels: [String] = []
+
+    @IBOutlet weak var channelsPicker: UIPickerView!
     
-    @IBOutlet weak var channelsTable: UITableView!
+    @IBAction func subscribeButton(_ sender: Any) {
+        let newTopic = channels[channelsPicker.selectedRow(inComponent: 0)]
+        FIRMessaging.messaging().subscribe(toTopic: "/topics/\(newTopic)")
+        
+        // show modal
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -20,27 +29,20 @@ class ChannelsViewController : UIViewController, UITableViewDataSource, UITableV
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return channels[row]
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "channelsCell", for: indexPath)
-        cell.textLabel?.text = channels[indexPath.row]
-        print(channels[indexPath.row])
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return channels.count
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
     func getChannels() {
-        let urlString : String = "https://dasnetwork.herokuapp.com/channels/list"
+        let urlString : String = "https://dasnetwork.herokuapp.com/channel/list"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -55,13 +57,13 @@ class ChannelsViewController : UIViewController, UITableViewDataSource, UITableV
             
             let json = try? JSONSerialization.jsonObject(with: data!, options: [])
             
-            if let array = json as? [String] {
-                for item in array {
-                    self.channels.append(item)
+            if let entries = json as? [[String:Any]] {
+                for entry in entries {
+                    self.channels.append(entry["key"] as! String)
                 }
             }
             
-            self.channelsTable.reloadData()
+            self.channelsPicker.reloadAllComponents()
             
         })
         
