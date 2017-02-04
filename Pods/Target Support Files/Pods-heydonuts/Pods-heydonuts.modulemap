@@ -1,6 +1,0 @@
-framework module Pods_heydonuts {
-  umbrella header "Pods-heydonuts-umbrella.h"
-
-  export *
-  module * { export * }
-}
