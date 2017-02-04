@@ -36,7 +36,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QMi-jl-1sk" kind="show" id="vef-NS-8YQ"/>
+                                    <segue destination="Ty6-nw-6ML" kind="show" id="JqG-iv-iBU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ps9-61-Zk7">
@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-562" y="141"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="MHU-95-AK8">
@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rw8-l3-SJB">
-                                <rect key="frame" x="127" y="91" width="120" height="120"/>
+                                <rect key="frame" x="127" y="135" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Cvw-9R-Voz"/>
                                     <constraint firstAttribute="width" constant="120" id="PA7-OV-Lmh"/>
@@ -107,18 +107,18 @@
                                 <rect key="frame" x="96" y="602" width="183" height="30"/>
                                 <state key="normal" title="+ Subscribe to a new team"/>
                                 <connections>
-                                    <segue destination="U45-Lg-ojY" kind="show" identifier="channelsSegue" id="zhh-ke-4jP"/>
+                                    <segue destination="U45-Lg-ojY" kind="show" id="sKU-w1-3SD"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8X-fp-fi6">
-                                <rect key="frame" x="27.5" y="310" width="320" height="216"/>
+                                <rect key="frame" x="27.5" y="354" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="QMi-jl-1sk" id="cTy-2p-o9I"/>
                                     <outlet property="delegate" destination="QMi-jl-1sk" id="p1L-XQ-06B"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which team gets your donuts?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbj-dd-u6e">
-                                <rect key="frame" x="71" y="290" width="233" height="21"/>
+                                <rect key="frame" x="71" y="334" width="233" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -136,6 +136,7 @@
                             <constraint firstItem="zbj-dd-u6e" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="sdg-Zx-a5i"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Uwk-1Q-NHx"/>
                     <connections>
                         <outlet property="channelPicker" destination="x8X-fp-fi6" id="Tby-Kk-DGB"/>
                     </connections>
@@ -157,13 +158,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-3r-LLR">
-                                <rect key="frame" x="151.5" y="75" width="72" height="21"/>
+                                <rect key="frame" x="151.5" y="119" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pD1-uf-G4e">
-                                <rect key="frame" x="27.5" y="152" width="320" height="216"/>
+                                <rect key="frame" x="27.5" y="196" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="U45-Lg-ojY" id="9uj-mY-wd7"/>
                                     <outlet property="delegate" destination="U45-Lg-ojY" id="LFG-xF-i8Q"/>
@@ -187,13 +188,14 @@
                             <constraint firstItem="lVC-xp-Ni3" firstAttribute="centerX" secondItem="a3g-3i-FfI" secondAttribute="centerX" id="xsm-RU-u81"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qY3-aK-4QU"/>
                     <connections>
                         <outlet property="channelsPicker" destination="pD1-uf-G4e" id="Kyj-mC-TyT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hcj-3Z-42D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.60000000000002" y="985.45727136431788"/>
+            <point key="canvasLocation" x="958" y="923"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3A1-gx-gIV">
@@ -228,6 +230,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTG-DX-lJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1763" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2nr-f3-v2r">
+            <objects>
+                <navigationController id="Ty6-nw-6ML" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oOJ-i3-15S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QMi-jl-1sk" kind="relationship" relationship="rootViewController" id="j1O-Sl-Hk3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLk-rb-6zL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="136"/>
         </scene>
     </scenes>
     <resources>
