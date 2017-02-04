@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52D598031E4431660023910E /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D598021E4431660023910E /* ChannelsViewController.swift */; };
 		52DA73A71E2D3B5700272DB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA73A61E2D3B5700272DB8 /* AppDelegate.swift */; };
 		52DA73A91E2D3B5700272DB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA73A81E2D3B5700272DB8 /* ViewController.swift */; };
 		52DA73AC1E2D3B5700272DB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52DA73AA1E2D3B5700272DB8 /* Main.storyboard */; };
 		52DA73AE1E2D3B5700272DB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52DA73AD1E2D3B5700272DB8 /* Assets.xcassets */; };
 		52DA73B11E2D3B5700272DB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52DA73AF1E2D3B5700272DB8 /* LaunchScreen.storyboard */; };
+		52F9006F1E3E41B0005C8C29 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F9006E1E3E41B0005C8C29 /* GoogleService-Info.plist */; };
+		52F900711E3E7643005C8C29 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F900701E3E7643005C8C29 /* MainViewController.swift */; };
+		A06FD5636900E0F2DC831B7D /* Pods_heydonuts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C097963533360017B17A0D5 /* Pods_heydonuts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C097963533360017B17A0D5 /* Pods_heydonuts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_heydonuts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2783B77B99DBCF62DFF2CA58 /* Pods-heydonuts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-heydonuts.release.xcconfig"; path = "Pods/Target Support Files/Pods-heydonuts/Pods-heydonuts.release.xcconfig"; sourceTree = "<group>"; };
+		52D598021E4431660023910E /* ChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		52DA73A31E2D3B5700272DB8 /* heydonuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = heydonuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DA73A61E2D3B5700272DB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52DA73A81E2D3B5700272DB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,10 @@
 		52DA73AD1E2D3B5700272DB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52DA73B01E2D3B5700272DB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52DA73B21E2D3B5700272DB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52F9006E1E3E41B0005C8C29 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		52F900701E3E7643005C8C29 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		52F900721E4113A2005C8C29 /* heydonuts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = heydonuts.entitlements; sourceTree = "<group>"; };
+		E98E5BFEBC51533541C3186B /* Pods-heydonuts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-heydonuts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-heydonuts/Pods-heydonuts.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +40,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06FD5636900E0F2DC831B7D /* Pods_heydonuts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		516B78659E3DD79B9C733D0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E98E5BFEBC51533541C3186B /* Pods-heydonuts.debug.xcconfig */,
+				2783B77B99DBCF62DFF2CA58 /* Pods-heydonuts.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		52DA739A1E2D3B5700272DB8 = {
 			isa = PBXGroup;
 			children = (
 				52DA73A51E2D3B5700272DB8 /* heydonuts */,
 				52DA73A41E2D3B5700272DB8 /* Products */,
+				516B78659E3DD79B9C733D0A /* Pods */,
+				AB1761A292E0E404C83C2FEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +77,26 @@
 		52DA73A51E2D3B5700272DB8 /* heydonuts */ = {
 			isa = PBXGroup;
 			children = (
+				52F900721E4113A2005C8C29 /* heydonuts.entitlements */,
+				52F9006E1E3E41B0005C8C29 /* GoogleService-Info.plist */,
 				52DA73A61E2D3B5700272DB8 /* AppDelegate.swift */,
 				52DA73A81E2D3B5700272DB8 /* ViewController.swift */,
 				52DA73AA1E2D3B5700272DB8 /* Main.storyboard */,
 				52DA73AD1E2D3B5700272DB8 /* Assets.xcassets */,
 				52DA73AF1E2D3B5700272DB8 /* LaunchScreen.storyboard */,
 				52DA73B21E2D3B5700272DB8 /* Info.plist */,
+				52F900701E3E7643005C8C29 /* MainViewController.swift */,
+				52D598021E4431660023910E /* ChannelsViewController.swift */,
 			);
 			path = heydonuts;
+			sourceTree = "<group>";
+		};
+		AB1761A292E0E404C83C2FEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C097963533360017B17A0D5 /* Pods_heydonuts.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +106,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52DA73B51E2D3B5700272DB8 /* Build configuration list for PBXNativeTarget "heydonuts" */;
 			buildPhases = (
+				486E86D1332E3FFBEEA3FAE9 /* [CP] Check Pods Manifest.lock */,
 				52DA739F1E2D3B5700272DB8 /* Sources */,
 				52DA73A01E2D3B5700272DB8 /* Frameworks */,
 				52DA73A11E2D3B5700272DB8 /* Resources */,
+				01AA902AEE589C73A7590FAE /* [CP] Embed Pods Frameworks */,
+				B2F76EF755B25A33A5972988 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +134,16 @@
 				TargetAttributes = {
 					52DA73A21E2D3B5700272DB8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = FR7DDWA7BQ;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -124,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52DA73B11E2D3B5700272DB8 /* LaunchScreen.storyboard in Resources */,
+				52F9006F1E3E41B0005C8C29 /* GoogleService-Info.plist in Resources */,
 				52DA73AE1E2D3B5700272DB8 /* Assets.xcassets in Resources */,
 				52DA73AC1E2D3B5700272DB8 /* Main.storyboard in Resources */,
 			);
@@ -131,12 +179,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01AA902AEE589C73A7590FAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-heydonuts/Pods-heydonuts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		486E86D1332E3FFBEEA3FAE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B2F76EF755B25A33A5972988 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-heydonuts/Pods-heydonuts-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52DA739F1E2D3B5700272DB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F900711E3E7643005C8C29 /* MainViewController.swift in Sources */,
 				52DA73A91E2D3B5700272DB8 /* ViewController.swift in Sources */,
+				52D598031E4431660023910E /* ChannelsViewController.swift in Sources */,
 				52DA73A71E2D3B5700272DB8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,9 +282,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FR7DDWA7BQ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -233,9 +333,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FR7DDWA7BQ;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -256,24 +358,36 @@
 		};
 		52DA73B61E2D3B5700272DB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E98E5BFEBC51533541C3186B /* Pods-heydonuts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = heydonuts/heydonuts.entitlements;
+				DEVELOPMENT_TEAM = FR7DDWA7BQ;
 				INFOPLIST_FILE = heydonuts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uwm.brian.heydonuts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heydonuts.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "29033dcf-96b5-4ab9-b380-d88647da1dc7";
+				PROVISIONING_PROFILE_SPECIFIER = heydonutsprofilev0.01;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		52DA73B71E2D3B5700272DB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2783B77B99DBCF62DFF2CA58 /* Pods-heydonuts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = heydonuts/heydonuts.entitlements;
+				DEVELOPMENT_TEAM = FR7DDWA7BQ;
 				INFOPLIST_FILE = heydonuts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uwm.brian.heydonuts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heydonuts.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "29033dcf-96b5-4ab9-b380-d88647da1dc7";
+				PROVISIONING_PROFILE_SPECIFIER = heydonutsprofilev0.01;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,6 +411,7 @@
 				52DA73B71E2D3B5700272DB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
