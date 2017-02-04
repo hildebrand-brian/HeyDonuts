@@ -118,6 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 print("Connected to FCM.")
                 FIRMessaging.messaging().subscribe(toTopic: "/topics/ATNA")
+                FIRMessaging.messaging().subscribe(toTopic: "/topics/Test")
             }
         }
         

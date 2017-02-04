@@ -13,7 +13,7 @@ import FirebaseMessaging
 class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var channels: [String] = []
-    var userName: String? = ""
+    var userName: String = "Unknown User"
    
     @IBOutlet weak var channelPicker: UIPickerView!
     

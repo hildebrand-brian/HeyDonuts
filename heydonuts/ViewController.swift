@@ -26,7 +26,9 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let mainScreen = segue.destination as! MainViewController
-        mainScreen.userName = usernameField.text
+        if let name = usernameField.text{
+            mainScreen.userName = name
+        }
         
     }
 
