@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseInstanceID
 import FirebaseMessaging
 
 class ChannelsViewController : UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {

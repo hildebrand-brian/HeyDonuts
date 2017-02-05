@@ -14,7 +14,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 
     var channels: [String] = []
     var userName: String = "UnknownUser"
-   
+    let DASKey : String = "4duIyZ4lYE5448rAueRVB3Y92uWidl5V"
+    
     @IBOutlet weak var channelPicker: UIPickerView!
     
     @IBAction func HeyDonutsOnClick(_ sender: Any) {
@@ -22,7 +23,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let row = self.channelPicker.selectedRow(inComponent: 0)
         let recipients = self.channels[row]
         
-        let urlString : String = "https://dasnetwork.herokuapp.com/?Key=4duIyZ4lYE5448rAueRVB3Y92uWidl5V&UserName=\(userName)&DeviceId=12345&Channel=\(recipients)"
+        let urlString : String = "https://dasnetwork.herokuapp.com/?Key=\(self.DASKey)&UserName=\(userName)&DeviceId=12345&Channel=\(recipients)"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -63,7 +64,9 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func getChannelsSubscribedTo(){
         self.channels = []
-        let urlString : String = "https://dasnetwork.herokuapp.com/channel/list"
+        
+        let token = FIRInstanceID.instanceID().token()!
+        let urlString : String = "https://dasnetwork.herokuapp.com/subscription/list/?Key=\(self.DASKey)&Token=\(token)"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -78,9 +81,9 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             
             let json = try? JSONSerialization.jsonObject(with: data!, options: [])
             
-            if let entries = json as? [[String:Any]] {
-                for entry in entries {
-                    self.channels.append(entry["key"] as! String)
+            if let entries = json as? [String:Any] {
+                for (channelName,_) in entries {
+                    self.channels.append(channelName)
                 }
             }
             
