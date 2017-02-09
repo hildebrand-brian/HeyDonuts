@@ -17,7 +17,7 @@ class NewChannelViewController: UIViewController{
     @IBAction func createAndSubscribeButton(_ sender: Any) {
         if let channelName = channelNameField.text{
             AddAndSubscribeToChannel(channelName: channelName)
-
+            self.navigationController!.popToRootViewController(animated: true)
         }
     
     }
