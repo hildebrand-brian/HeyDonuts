@@ -13,7 +13,7 @@ import FirebaseMessaging
 class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var channels: [String] = []
-    var userName: String = "UnknownUser"
+    static var userName: String = "UnknownUser"
     let DASKey : String = "4duIyZ4lYE5448rAueRVB3Y92uWidl5V"
     
     @IBOutlet weak var channelPicker: UIPickerView!
@@ -23,7 +23,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let row = self.channelPicker.selectedRow(inComponent: 0)
         let recipients = self.channels[row]
         
-        let urlString : String = "https://dasnetwork.herokuapp.com/?Key=\(self.DASKey)&UserName=\(userName)&DeviceId=12345&Channel=\(recipients)"
+        let urlString : String = "https://dasnetwork.herokuapp.com/?Key=\(self.DASKey)&UserName=\(MainViewController.userName)&DeviceId=12345&Channel=\(recipients)"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -86,8 +86,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     self.channels.append(channelName)
                 }
             }
-            
-            self.channelPicker.reloadAllComponents()
+            self.channelPicker.reloadComponent(0)
             
         })
         

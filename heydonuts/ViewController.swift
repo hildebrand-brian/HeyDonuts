@@ -8,12 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameField.delegate = self
+        self.loginButton.layer.cornerRadius = 8
+        self.loginButton.layer.masksToBounds = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -22,14 +27,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let mainScreen = segue.destination as! MainViewController
-        //if let name = usernameField.text{
-        //    mainScreen.userName = name
-        //}
-        
+        if let text = self.usernameField.text{
+            MainViewController.userName = text
+        }
     }
 
     

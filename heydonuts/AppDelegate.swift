@@ -117,8 +117,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Unable to connect with FCM. \(error)")
             } else {
                 print("Connected to FCM.")
-                FIRMessaging.messaging().subscribe(toTopic: "/topics/ATNA")
-                FIRMessaging.messaging().subscribe(toTopic: "/topics/Test")
             }
         }
         
