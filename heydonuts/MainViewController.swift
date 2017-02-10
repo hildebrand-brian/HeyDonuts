@@ -51,8 +51,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         return 1
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
         getChannelsSubscribedTo()
     }
     
