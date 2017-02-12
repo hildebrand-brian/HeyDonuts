@@ -25,7 +25,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
+        
         GIDSignIn.sharedInstance().signInSilently()
         SignInButton.style = .wide
         

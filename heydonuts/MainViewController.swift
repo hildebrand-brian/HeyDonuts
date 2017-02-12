@@ -68,7 +68,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func getChannelsSubscribedTo(){
-        self.channels = []
         
         let token = FIRInstanceID.instanceID().token()!
         let urlString : String = "https://dasnetwork.herokuapp.com/subscription/list/?Key=\(self.DASKey)&Token=\(token)"
@@ -83,7 +82,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")
-            
+            self.channels = []
             let json = try? JSONSerialization.jsonObject(with: data!, options: [])
             
             if let entries = json as? [String:Any] {
@@ -91,7 +90,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     self.channels.append(channelName)
                 }
             }
-            self.channelPicker.reloadComponent(0)
+            self.channelPicker.reloadAllComponents()
             
         })
         
