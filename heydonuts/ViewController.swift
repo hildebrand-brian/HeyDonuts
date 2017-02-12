@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import GoogleSignIn
 
-class ViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var usernameField: UITextField!
+class ViewController: UIViewController, GIDSignInUIDelegate {
     
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet var SignInButton: GIDSignInButton!
+    
+    func refreshInterface() {
+        if (GIDSignIn.sharedInstance().currentUser) != nil {
+            let vc = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "mainNavigationController") as! UINavigationController
+            self.present(vc, animated: true, completion: nil)
+            print("Succeeded in getting a current user during refreshInterface call")
+        }
+        print("Failed to retriever currentUser during a refreshInterface call")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameField.delegate = self
-        self.loginButton.layer.cornerRadius = 8
-        self.loginButton.layer.masksToBounds = true
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+        GIDSignIn.sharedInstance().signInSilently()
+        SignInButton.style = .wide
+        
+        (UIApplication.shared.delegate as! AppDelegate).signInCallback = refreshInterface
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,18 +39,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true;
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let text = self.usernameField.text{
-            MainViewController.userName = text
-        }
-    }
-
     
 
 }
-

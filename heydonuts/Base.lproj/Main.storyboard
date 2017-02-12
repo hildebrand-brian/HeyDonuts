@@ -28,64 +28,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lE-Rk-T4w" userLabel="loginButton">
-                                <rect key="frame" x="166" y="370" width="42" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Ty6-nw-6ML" kind="show" id="JqG-iv-iBU"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ps9-61-Zk7">
-                                <rect key="frame" x="148" y="280" width="79" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gh6-ug-YZT" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="293" width="240" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="79" id="L2S-dh-IS9"/>
+                                    <constraint firstAttribute="height" constant="51" id="Lyg-YB-y5S"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q31-dt-ntD">
-                                <rect key="frame" x="46" y="318" width="282" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="usernameTextField"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vkh-gw-EML"/>
-                                </connections>
-                            </textField>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6lE-Rk-T4w" firstAttribute="top" secondItem="q31-dt-ntD" secondAttribute="bottom" constant="22" id="2Yr-1A-zUH"/>
-                            <constraint firstItem="ps9-61-Zk7" firstAttribute="top" secondItem="RXv-EI-3Dw" secondAttribute="bottom" constant="92" id="Bat-KK-1r9"/>
-                            <constraint firstItem="q31-dt-ntD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="OT8-AO-LLb"/>
-                            <constraint firstItem="q31-dt-ntD" firstAttribute="top" secondItem="ps9-61-Zk7" secondAttribute="bottom" constant="17" id="bKC-8g-Bhc"/>
+                            <constraint firstItem="gh6-ug-YZT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="6vg-nk-fiS"/>
+                            <constraint firstItem="gh6-ug-YZT" firstAttribute="top" secondItem="RXv-EI-3Dw" secondAttribute="bottom" constant="105" id="83p-kE-RBW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gh6-ug-YZT" secondAttribute="trailing" constant="52" id="MXT-Kg-q9L"/>
                             <constraint firstItem="RXv-EI-3Dw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lp0-Qc-z0M"/>
-                            <constraint firstItem="q31-dt-ntD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m4z-BG-wXG"/>
-                            <constraint firstItem="q31-dt-ntD" firstAttribute="top" secondItem="RXv-EI-3Dw" secondAttribute="bottom" constant="130" id="mmp-K7-XRu"/>
-                            <constraint firstItem="ps9-61-Zk7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nb4-cs-O2n"/>
                             <constraint firstItem="RXv-EI-3Dw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="147" id="obR-yl-ZKH"/>
-                            <constraint firstItem="6lE-Rk-T4w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sgD-AS-SS9"/>
+                            <constraint firstItem="gh6-ug-YZT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wAU-vK-G2p"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="6lE-Rk-T4w" id="YWO-nB-uUe"/>
-                        <outlet property="usernameField" destination="q31-dt-ntD" id="keb-bb-vZQ"/>
+                        <outlet property="SignInButton" destination="gh6-ug-YZT" id="GJi-fX-tGS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-562" y="141"/>
+            <point key="canvasLocation" x="-562.39999999999998" y="140.77961019490255"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="MHU-95-AK8">
             <objects>
-                <viewController id="QMi-jl-1sk" customClass="MainViewController" customModule="heydonuts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainViewController" id="QMi-jl-1sk" customClass="MainViewController" customModule="heydonuts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xXd-8M-dRx"/>
                         <viewControllerLayoutGuide type="bottom" id="LfZ-aF-G5S"/>
@@ -116,7 +88,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8X-fp-fi6">
-                                <rect key="frame" x="27.5" y="354" width="320" height="216"/>
+                                <rect key="frame" x="28" y="354" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="QMi-jl-1sk" id="cTy-2p-o9I"/>
                                     <outlet property="delegate" destination="QMi-jl-1sk" id="p1L-XQ-06B"/>
@@ -130,6 +102,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" identifier="mainViewController"/>
                         <constraints>
                             <constraint firstItem="x8X-fp-fi6" firstAttribute="top" secondItem="zbj-dd-u6e" secondAttribute="bottom" constant="-1" id="3VV-Lz-EeM"/>
                             <constraint firstItem="0nk-Sd-Awx" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="4Hu-GO-aMC"/>
@@ -163,13 +136,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-3r-LLR">
-                                <rect key="frame" x="151.5" y="119" width="72" height="21"/>
+                                <rect key="frame" x="152" y="119" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pD1-uf-G4e">
-                                <rect key="frame" x="27.5" y="196" width="320" height="216"/>
+                                <rect key="frame" x="28" y="196" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="U45-Lg-ojY" id="9uj-mY-wd7"/>
                                     <outlet property="delegate" destination="U45-Lg-ojY" id="LFG-xF-i8Q"/>
@@ -183,7 +156,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgM-Co-nWp">
-                                <rect key="frame" x="112.5" y="528" width="150" height="30"/>
+                                <rect key="frame" x="113" y="528" width="150" height="30"/>
                                 <state key="normal" title="+ Create new channel"/>
                                 <connections>
                                     <segue destination="op4-z2-9my" kind="show" id="Z0i-0k-38V"/>
@@ -230,7 +203,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New channel name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjJ-el-UEu">
-                                <rect key="frame" x="114.5" y="243" width="146" height="21"/>
+                                <rect key="frame" x="115" y="243" width="146" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -307,8 +280,8 @@
         <!--Navigation Controller-->
         <scene sceneID="2nr-f3-v2r">
             <objects>
-                <navigationController id="Ty6-nw-6ML" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oOJ-i3-15S">
+                <navigationController storyboardIdentifier="mainNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ty6-nw-6ML" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oOJ-i3-15S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

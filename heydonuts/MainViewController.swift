@@ -9,11 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseMessaging
+import GoogleSignIn
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var channels: [String] = []
-    static var userName: String = "UnknownUser"
+    var username: String?
     let DASKey : String = "4duIyZ4lYE5448rAueRVB3Y92uWidl5V"
     
     @IBOutlet weak var channelPicker: UIPickerView!
@@ -23,7 +24,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let row = self.channelPicker.selectedRow(inComponent: 0)
         let recipients = self.channels[row]
         
-        let urlString : String = "https://dasnetwork.herokuapp.com/?Key=\(self.DASKey)&UserName=\(MainViewController.userName)&DeviceId=12345&Channel=\(recipients)"
+        let urlString : String = "https://dasnetwork.herokuapp.com/?Key=\(self.DASKey)&UserName=\(self.username!)&DeviceId=12345&Channel=\(recipients)"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -49,6 +50,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
+    }
+    
+    override func viewDidLoad() {
+        self.username = GIDSignIn.sharedInstance().currentUser.profile.givenName
+        print("\(self.username)")
     }
     
     override func viewDidAppear(_ animated: Bool) {

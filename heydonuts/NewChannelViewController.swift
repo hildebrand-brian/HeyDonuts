@@ -12,6 +12,7 @@ import FirebaseMessaging
 class NewChannelViewController: UIViewController{
 
     let DASKey : String = "4duIyZ4lYE5448rAueRVB3Y92uWidl5V"
+    let userName: String = "iOSTestUser"
     
     @IBOutlet weak var channelNameField: UITextField!
     @IBAction func createAndSubscribeButton(_ sender: Any) {
@@ -23,7 +24,7 @@ class NewChannelViewController: UIViewController{
     }
     
     func AddAndSubscribeToChannel(channelName: String) {
-        let urlString : String = "https://dasnetwork.herokuapp.com/channel/add?Key=\(self.DASKey)&UserName=\(MainViewController.userName)&Channel=\(channelName)"
+        let urlString : String = "https://dasnetwork.herokuapp.com/channel/add?Key=\(self.DASKey)&UserName=\(self.userName)&Channel=\(channelName)"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
