@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		52CC80C21E4C9ED000AB3F9B /* NewChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC80C11E4C9ED000AB3F9B /* NewChannelViewController.swift */; };
+		52D282EE1E51DD20000A78A7 /* EditChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D282ED1E51DD20000A78A7 /* EditChannelsViewController.swift */; };
+		52D282F01E51DE25000A78A7 /* UnsubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D282EF1E51DE25000A78A7 /* UnsubscribeViewController.swift */; };
+		52D282F21E51E002000A78A7 /* CurrentChannelAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D282F11E51E002000A78A7 /* CurrentChannelAccessObject.swift */; };
 		52D598031E4431660023910E /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D598021E4431660023910E /* ChannelsViewController.swift */; };
 		52DA73A71E2D3B5700272DB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA73A61E2D3B5700272DB8 /* AppDelegate.swift */; };
 		52DA73A91E2D3B5700272DB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA73A81E2D3B5700272DB8 /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 		1C097963533360017B17A0D5 /* Pods_heydonuts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_heydonuts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2783B77B99DBCF62DFF2CA58 /* Pods-heydonuts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-heydonuts.release.xcconfig"; path = "Pods/Target Support Files/Pods-heydonuts/Pods-heydonuts.release.xcconfig"; sourceTree = "<group>"; };
 		52CC80C11E4C9ED000AB3F9B /* NewChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChannelViewController.swift; sourceTree = "<group>"; };
+		52D282ED1E51DD20000A78A7 /* EditChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditChannelsViewController.swift; sourceTree = "<group>"; };
+		52D282EF1E51DE25000A78A7 /* UnsubscribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsubscribeViewController.swift; sourceTree = "<group>"; };
+		52D282F11E51E002000A78A7 /* CurrentChannelAccessObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentChannelAccessObject.swift; sourceTree = "<group>"; };
 		52D598021E4431660023910E /* ChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		52DA73A31E2D3B5700272DB8 /* heydonuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = heydonuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DA73A61E2D3B5700272DB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 				52DA73B21E2D3B5700272DB8 /* Info.plist */,
 				52F900701E3E7643005C8C29 /* MainViewController.swift */,
 				52D598021E4431660023910E /* ChannelsViewController.swift */,
+				52D282ED1E51DD20000A78A7 /* EditChannelsViewController.swift */,
+				52D282EF1E51DE25000A78A7 /* UnsubscribeViewController.swift */,
+				52D282F11E51E002000A78A7 /* CurrentChannelAccessObject.swift */,
 			);
 			path = heydonuts;
 			sourceTree = "<group>";
@@ -235,8 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D282F21E51E002000A78A7 /* CurrentChannelAccessObject.swift in Sources */,
 				52F900711E3E7643005C8C29 /* MainViewController.swift in Sources */,
 				52CC80C21E4C9ED000AB3F9B /* NewChannelViewController.swift in Sources */,
+				52D282F01E51DE25000A78A7 /* UnsubscribeViewController.swift in Sources */,
+				52D282EE1E51DD20000A78A7 /* EditChannelsViewController.swift in Sources */,
 				52DA73A91E2D3B5700272DB8 /* ViewController.swift in Sources */,
 				52D598031E4431660023910E /* ChannelsViewController.swift in Sources */,
 				52DA73A71E2D3B5700272DB8 /* AppDelegate.swift in Sources */,

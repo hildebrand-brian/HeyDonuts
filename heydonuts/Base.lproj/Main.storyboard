@@ -84,7 +84,7 @@
                                 <rect key="frame" x="134" y="602" width="108" height="30"/>
                                 <state key="normal" title="+ Edit Channels"/>
                                 <connections>
-                                    <segue destination="U45-Lg-ojY" kind="show" id="sKU-w1-3SD"/>
+                                    <segue destination="nid-ZN-sEa" kind="show" id="c1S-qY-UHe"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8X-fp-fi6">
@@ -123,6 +123,122 @@
             </objects>
             <point key="canvasLocation" x="958" y="141"/>
         </scene>
+        <!--Edit Channels View Controller-->
+        <scene sceneID="Khb-qU-xFL">
+            <objects>
+                <viewController id="nid-ZN-sEa" customClass="EditChannelsViewController" customModule="heydonuts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l3A-VN-882"/>
+                        <viewControllerLayoutGuide type="bottom" id="J6Q-HP-4Ac"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Lf-pM-UEr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuB-aj-1xX">
+                                <rect key="frame" x="94" y="294" width="186" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Unsubscribe From Channel"/>
+                                <connections>
+                                    <segue destination="vQK-CA-kvA" kind="show" id="dzo-hC-Psc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFp-X0-a2o">
+                                <rect key="frame" x="117" y="366" width="141" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create New Channel"/>
+                                <connections>
+                                    <segue destination="op4-z2-9my" kind="show" id="HKJ-sP-NbP"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Edit Channels" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zST-Lh-K0E">
+                                <rect key="frame" x="114.5" y="144" width="145" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsm-kc-tnI">
+                                <rect key="frame" x="96" y="222" width="182" height="30"/>
+                                <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Subscribe to New Channel"/>
+                                <connections>
+                                    <segue destination="U45-Lg-ojY" kind="show" id="lZI-cQ-Px3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.76526432140224476" green="0.76526432140224476" blue="0.76526432140224476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xuB-aj-1xX" firstAttribute="centerX" secondItem="5Lf-pM-UEr" secondAttribute="centerX" id="2Vf-BW-C7q"/>
+                            <constraint firstItem="xuB-aj-1xX" firstAttribute="top" secondItem="nsm-kc-tnI" secondAttribute="bottom" constant="42" id="9wU-A3-I0t"/>
+                            <constraint firstItem="zST-Lh-K0E" firstAttribute="centerX" secondItem="5Lf-pM-UEr" secondAttribute="centerX" id="Fv3-a7-DGR"/>
+                            <constraint firstItem="KFp-X0-a2o" firstAttribute="top" secondItem="xuB-aj-1xX" secondAttribute="bottom" constant="42" id="Mof-BM-zzQ"/>
+                            <constraint firstItem="KFp-X0-a2o" firstAttribute="centerX" secondItem="5Lf-pM-UEr" secondAttribute="centerX" id="RhE-We-9Sj"/>
+                            <constraint firstItem="nsm-kc-tnI" firstAttribute="top" secondItem="zST-Lh-K0E" secondAttribute="bottom" constant="48" id="lUJ-eX-YqK"/>
+                            <constraint firstItem="zST-Lh-K0E" firstAttribute="top" secondItem="l3A-VN-882" secondAttribute="bottom" constant="80" id="rOS-7v-sjh"/>
+                            <constraint firstItem="nsm-kc-tnI" firstAttribute="centerX" secondItem="5Lf-pM-UEr" secondAttribute="centerX" id="uqS-Ly-zPL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createChannelNavButton" destination="KFp-X0-a2o" id="zUL-AB-zFS"/>
+                        <outlet property="subscribeNavButton" destination="nsm-kc-tnI" id="IeJ-xW-CG6"/>
+                        <outlet property="unsubscribeNavButton" destination="xuB-aj-1xX" id="6xI-jY-gDj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADu-tk-2Yx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="919.79010494752629"/>
+        </scene>
+        <!--Unsubscribe View Controller-->
+        <scene sceneID="sMo-Dx-PBR">
+            <objects>
+                <viewController id="vQK-CA-kvA" customClass="UnsubscribeViewController" customModule="heydonuts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ymV-Gm-Ux3"/>
+                        <viewControllerLayoutGuide type="bottom" id="TXO-1Z-mUB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lW2-H0-4gk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRw-IU-qJl">
+                                <rect key="frame" x="27.5" y="206" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vQK-CA-kvA" id="DDv-zh-ovO"/>
+                                    <outlet property="delegate" destination="vQK-CA-kvA" id="ht0-Ko-L5a"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANT-13-bxE">
+                                <rect key="frame" x="144" y="430" width="87" height="30"/>
+                                <state key="normal" title="Unsubscribe"/>
+                                <connections>
+                                    <action selector="unsubscribeButton:" destination="vQK-CA-kvA" eventType="touchUpInside" id="6ja-Sl-3KZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unsubscribe from Channel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-5q-FDI">
+                                <rect key="frame" x="68.5" y="126" width="239" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ANT-13-bxE" firstAttribute="centerX" secondItem="lW2-H0-4gk" secondAttribute="centerX" id="0En-qF-JdO"/>
+                            <constraint firstItem="ANT-13-bxE" firstAttribute="top" secondItem="JRw-IU-qJl" secondAttribute="bottom" constant="8" id="6iq-w9-2YP"/>
+                            <constraint firstItem="JRw-IU-qJl" firstAttribute="centerX" secondItem="lW2-H0-4gk" secondAttribute="centerX" id="hou-ia-adh"/>
+                            <constraint firstItem="Dfa-5q-FDI" firstAttribute="top" secondItem="ymV-Gm-Ux3" secondAttribute="bottom" constant="62" id="jrw-eK-oRA"/>
+                            <constraint firstItem="Dfa-5q-FDI" firstAttribute="centerX" secondItem="lW2-H0-4gk" secondAttribute="centerX" id="zSX-Rl-aYt"/>
+                            <constraint firstItem="JRw-IU-qJl" firstAttribute="top" secondItem="Dfa-5q-FDI" secondAttribute="bottom" constant="56" id="zfA-yu-RGh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="channelsPicker" destination="JRw-IU-qJl" id="xvx-nu-38w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfW-uk-W1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="1676"/>
+        </scene>
         <!--Channels View Controller-->
         <scene sceneID="aC5-gZ-ilx">
             <objects>
@@ -136,42 +252,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-3r-LLR">
-                                <rect key="frame" x="152" y="119" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="146" y="119" width="84.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pD1-uf-G4e">
-                                <rect key="frame" x="28" y="196" width="320" height="216"/>
+                                <rect key="frame" x="28" y="199" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="U45-Lg-ojY" id="9uj-mY-wd7"/>
                                     <outlet property="delegate" destination="U45-Lg-ojY" id="LFG-xF-i8Q"/>
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVC-xp-Ni3">
-                                <rect key="frame" x="153" y="420" width="70" height="30"/>
+                                <rect key="frame" x="153" y="423" width="70" height="30"/>
                                 <state key="normal" title="Subscribe"/>
                                 <connections>
                                     <action selector="subscribeButton:" destination="U45-Lg-ojY" eventType="touchUpInside" id="FoG-eN-1zD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgM-Co-nWp">
-                                <rect key="frame" x="113" y="528" width="150" height="30"/>
-                                <state key="normal" title="+ Create new channel"/>
-                                <connections>
-                                    <segue destination="op4-z2-9my" kind="show" id="Z0i-0k-38V"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vgM-Co-nWp" firstAttribute="centerX" secondItem="a3g-3i-FfI" secondAttribute="centerX" id="KIj-Wl-Aq4"/>
                             <constraint firstItem="pD1-uf-G4e" firstAttribute="top" secondItem="Ec6-3r-LLR" secondAttribute="bottom" constant="56" id="WJN-eV-fgS"/>
                             <constraint firstItem="lVC-xp-Ni3" firstAttribute="top" secondItem="pD1-uf-G4e" secondAttribute="bottom" constant="8" id="X0z-Zq-mdO"/>
                             <constraint firstItem="Ec6-3r-LLR" firstAttribute="centerX" secondItem="a3g-3i-FfI" secondAttribute="centerX" id="b0p-1k-Ng6"/>
                             <constraint firstItem="pD1-uf-G4e" firstAttribute="centerX" secondItem="a3g-3i-FfI" secondAttribute="centerX" id="cKG-4i-lEC"/>
                             <constraint firstItem="Ec6-3r-LLR" firstAttribute="top" secondItem="olB-Y4-flP" secondAttribute="bottom" constant="55" id="drK-Pw-AlD"/>
-                            <constraint firstItem="vgM-Co-nWp" firstAttribute="top" secondItem="lVC-xp-Ni3" secondAttribute="bottom" constant="78" id="mqe-Mg-hW9"/>
                             <constraint firstItem="lVC-xp-Ni3" firstAttribute="centerX" secondItem="a3g-3i-FfI" secondAttribute="centerX" id="xsm-RU-u81"/>
                         </constraints>
                     </view>
@@ -197,25 +304,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new channel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYl-5t-u8Z">
-                                <rect key="frame" x="105" y="125" width="165" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="91" y="125" width="194" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New channel name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjJ-el-UEu">
-                                <rect key="frame" x="115" y="243" width="146" height="21"/>
+                                <rect key="frame" x="115" y="205" width="146" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHL-E7-bKh">
-                                <rect key="frame" x="31" y="296" width="313" height="30"/>
+                                <rect key="frame" x="31" y="258" width="313" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFu-fb-62E">
-                                <rect key="frame" x="113" y="356" width="149" height="30"/>
+                                <rect key="frame" x="113" y="318" width="149" height="30"/>
                                 <state key="normal" title="Create and Subscribe"/>
                                 <connections>
                                     <action selector="createAndSubscribeButton:" destination="op4-z2-9my" eventType="touchUpInside" id="czi-BS-sPK"/>
@@ -230,7 +337,7 @@
                             <constraint firstItem="HjJ-el-UEu" firstAttribute="centerX" secondItem="C4k-mz-VCf" secondAttribute="centerX" id="Djy-QR-wD5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dHL-E7-bKh" secondAttribute="trailing" constant="15" id="GZ4-1b-Ydv"/>
                             <constraint firstItem="oFu-fb-62E" firstAttribute="centerX" secondItem="C4k-mz-VCf" secondAttribute="centerX" id="LSB-Bt-3D5"/>
-                            <constraint firstItem="HjJ-el-UEu" firstAttribute="top" secondItem="XYl-5t-u8Z" secondAttribute="bottom" constant="97" id="Lne-aT-u33"/>
+                            <constraint firstItem="HjJ-el-UEu" firstAttribute="top" secondItem="XYl-5t-u8Z" secondAttribute="bottom" constant="56" id="Lne-aT-u33"/>
                             <constraint firstItem="oFu-fb-62E" firstAttribute="top" secondItem="dHL-E7-bKh" secondAttribute="bottom" constant="30" id="QoA-xL-Liw"/>
                             <constraint firstItem="dHL-E7-bKh" firstAttribute="top" secondItem="HjJ-el-UEu" secondAttribute="bottom" constant="32" id="UWl-79-Ba7"/>
                         </constraints>
@@ -241,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6GQ-Ps-ExP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="926"/>
+            <point key="canvasLocation" x="-623" y="922"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3A1-gx-gIV">

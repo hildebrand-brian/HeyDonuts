@@ -1,24 +1,24 @@
 //
-//  ChannelsViewController.swift
+//  UnsubscribeViewController.swift
 //  heydonuts
 //
-//  Created by Brian Hildebrand on 2/2/17.
+//  Created by Brian Hildebrand on 2/13/17.
 //  Copyright © 2017 Brian Hildebrand. All rights reserved.
 //
 
 import UIKit
-import FirebaseInstanceID
+import FirebaseCore
 import FirebaseMessaging
 
-class ChannelsViewController : UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    var channels: [String] = []
+class UnsubscribeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    var channels: [String] = []
+    
     @IBOutlet weak var channelsPicker: UIPickerView!
     
-    @IBAction func subscribeButton(_ sender: Any) {
+    @IBAction func unsubscribeButton(_ sender: Any) {
         let newTopic = channels[channelsPicker.selectedRow(inComponent: 0)]
-        FIRMessaging.messaging().subscribe(toTopic: "/topics/\(newTopic)")
+        FIRMessaging.messaging().unsubscribe(fromTopic: "/topics/\(newTopic)")
         
         // show modal
         self.navigationController!.popViewController(animated: true)
