@@ -21,7 +21,7 @@ class UnsubscribeViewController: UIViewController, UIPickerViewDelegate, UIPicke
         FIRMessaging.messaging().unsubscribe(fromTopic: "/topics/\(newTopic)")
         
         // show modal
-        self.navigationController!.popViewController(animated: true)
+        self.navigationController!.popToRootViewController(animated: true)
     }
     
     

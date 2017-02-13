@@ -21,7 +21,7 @@ class ChannelsViewController : UIViewController, UIPickerViewDataSource, UIPicke
         FIRMessaging.messaging().subscribe(toTopic: "/topics/\(newTopic)")
         
         // show modal
-        self.navigationController!.popViewController(animated: true)
+        self.navigationController!.popToRootViewController(animated: true)
     }
     
     
