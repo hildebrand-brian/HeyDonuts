@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -67,12 +67,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rw8-l3-SJB">
-                                <rect key="frame" x="127" y="135" width="120" height="120"/>
+                                <rect key="frame" x="97.5" y="112" width="180" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Cvw-9R-Voz"/>
-                                    <constraint firstAttribute="width" constant="120" id="PA7-OV-Lmh"/>
+                                    <constraint firstAttribute="height" constant="180" id="Cvw-9R-Voz"/>
+                                    <constraint firstAttribute="width" constant="180" id="PA7-OV-Lmh"/>
                                 </constraints>
-                                <state key="normal" title="Hey Donuts!" backgroundImage="Red-circle-transparent-1024x1006">
+                                <state key="normal" title="I'm bringing in donuts!" backgroundImage="Red-circle-transparent-1024x1006">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -81,21 +81,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nk-Sd-Awx">
-                                <rect key="frame" x="134" y="602" width="108" height="30"/>
+                                <rect key="frame" x="133" y="579" width="108" height="30"/>
                                 <state key="normal" title="+ Edit Channels"/>
                                 <connections>
                                     <segue destination="nid-ZN-sEa" kind="show" id="c1S-qY-UHe"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8X-fp-fi6">
-                                <rect key="frame" x="28" y="354" width="320" height="216"/>
+                                <rect key="frame" x="27" y="362" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="QMi-jl-1sk" id="cTy-2p-o9I"/>
                                     <outlet property="delegate" destination="QMi-jl-1sk" id="p1L-XQ-06B"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which team gets your donuts?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbj-dd-u6e">
-                                <rect key="frame" x="71" y="334" width="233" height="21"/>
+                                <rect key="frame" x="71" y="342" width="233" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -107,10 +107,10 @@
                             <constraint firstItem="x8X-fp-fi6" firstAttribute="top" secondItem="zbj-dd-u6e" secondAttribute="bottom" constant="-1" id="3VV-Lz-EeM"/>
                             <constraint firstItem="0nk-Sd-Awx" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="4Hu-GO-aMC"/>
                             <constraint firstItem="rw8-l3-SJB" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="Htg-sb-XJV"/>
-                            <constraint firstItem="LfZ-aF-G5S" firstAttribute="top" secondItem="0nk-Sd-Awx" secondAttribute="bottom" constant="35" id="STi-l1-dzv"/>
-                            <constraint firstItem="zbj-dd-u6e" firstAttribute="top" secondItem="rw8-l3-SJB" secondAttribute="bottom" constant="79" id="aA1-ER-txu"/>
+                            <constraint firstItem="zbj-dd-u6e" firstAttribute="top" secondItem="rw8-l3-SJB" secondAttribute="bottom" constant="50" id="aA1-ER-txu"/>
                             <constraint firstItem="x8X-fp-fi6" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="bT4-CL-mWy"/>
-                            <constraint firstItem="rw8-l3-SJB" firstAttribute="top" secondItem="xXd-8M-dRx" secondAttribute="bottom" constant="71" id="lxy-ct-Qcf"/>
+                            <constraint firstItem="0nk-Sd-Awx" firstAttribute="top" secondItem="x8X-fp-fi6" secondAttribute="bottom" constant="1" id="fG6-xK-FCr"/>
+                            <constraint firstItem="rw8-l3-SJB" firstAttribute="top" secondItem="xXd-8M-dRx" secondAttribute="bottom" constant="48" id="lxy-ct-Qcf"/>
                             <constraint firstItem="zbj-dd-u6e" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="sdg-Zx-a5i"/>
                         </constraints>
                     </view>
@@ -388,7 +388,7 @@
         <scene sceneID="2nr-f3-v2r">
             <objects>
                 <navigationController storyboardIdentifier="mainNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ty6-nw-6ML" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oOJ-i3-15S">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oOJ-i3-15S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

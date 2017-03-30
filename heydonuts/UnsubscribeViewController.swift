@@ -44,7 +44,7 @@ class UnsubscribeViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func getChannels() {
-        let urlString : String = "https://dasnetwork.herokuapp.com/channel/list"
+        let urlString : String = "https://dasnetwork.herokuapp.com/v1/channel/list"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -53,6 +53,7 @@ class UnsubscribeViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("4duIyZ4lYE5448rAueRVB3Y92uWidl5V", forHTTPHeaderField: "DasKey")
         
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")

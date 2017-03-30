@@ -10,8 +10,7 @@ import UIKit
 import FirebaseMessaging
 
 class NewChannelViewController: UIViewController{
-
-    let DASKey : String = "4duIyZ4lYE5448rAueRVB3Y92uWidl5V"
+    
     let userName: String = "iOSTestUser"
     
     @IBOutlet weak var channelNameField: UITextField!
@@ -24,7 +23,10 @@ class NewChannelViewController: UIViewController{
     }
     
     func AddAndSubscribeToChannel(channelName: String) {
-        let urlString : String = "https://dasnetwork.herokuapp.com/channel/add?Key=\(self.DASKey)&UserName=\(self.userName)&Channel=\(channelName)"
+        
+        let slightlyFixedChannelName = channelName.replacingOccurrences(of: " ", with: "-")
+        
+        let urlString : String = "https://dasnetwork.herokuapp.com/v1/channel/add?UserName=\(self.userName)&Channel=\(slightlyFixedChannelName)"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -33,6 +35,7 @@ class NewChannelViewController: UIViewController{
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("4duIyZ4lYE5448rAueRVB3Y92uWidl5V", forHTTPHeaderField: "DasKey")
         
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")

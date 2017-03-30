@@ -15,16 +15,28 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 
     var channels: [String] = []
     var username: String?
-    let DASKey : String = "4duIyZ4lYE5448rAueRVB3Y92uWidl5V"
     
     @IBOutlet weak var channelPicker: UIPickerView!
     
     @IBAction func HeyDonutsOnClick(_ sender: Any) {
         
+        if (channels.count == 0){
+            return
+        }
+        
         let row = self.channelPicker.selectedRow(inComponent: 0)
         let recipients = self.channels[row]
         
-        let urlString : String = "https://dasnetwork.herokuapp.com/?Key=\(self.DASKey)&UserName=\(self.username!)&DeviceId=12345&Channel=\(recipients)"
+        
+        if(self.username == nil){
+            self.username = GIDSignIn.sharedInstance()?.currentUser?.profile?.givenName
+        }
+        
+        if(self.username == nil){
+            self.username = "Unknown User"
+        }
+        
+        let urlString : String = "https://dasnetwork.herokuapp.com/v1/message/send?UserName=\(self.username!)&Channel=\(recipients)"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -53,8 +65,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     override func viewDidLoad() {
-        self.username = GIDSignIn.sharedInstance().currentUser.profile.givenName
-        print("\(self.username)")
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,8 +80,16 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func getChannelsSubscribedTo(){
         
-        let token = FIRInstanceID.instanceID().token()!
-        let urlString : String = "https://dasnetwork.herokuapp.com/subscription/list/?Key=\(self.DASKey)&Token=\(token)"
+        let token = FIRInstanceID.instanceID().token()
+        
+        if let unwrappedToken = token{
+            callChannelsService(token: unwrappedToken)
+        }
+        
+    }
+    
+    func callChannelsService(token: String){
+        let urlString : String = "https://dasnetwork.herokuapp.com/subscription/list/?Key=4duIyZ4lYE5448rAueRVB3Y92uWidl5V&Token=\(token)"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -79,10 +98,18 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("4duIyZ4lYE5448rAueRVB3Y92uWidl5V", forHTTPHeaderField: "DasKey")
         
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")
             self.channels = []
+            
+            if error != nil {
+                print("Error retrieving channels")
+                // how do I pop this up?
+                return
+            }
+            
             let json = try? JSONSerialization.jsonObject(with: data!, options: [])
             
             if let entries = json as? [String:Any] {
@@ -91,9 +118,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                 }
             }
             self.channelPicker.reloadAllComponents()
-            
         })
-        
         task.resume()
     }
     

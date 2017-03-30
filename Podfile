@@ -8,5 +8,6 @@ target 'heydonuts' do
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
     pod 'Firebase/Auth'
+    pod 'Firebase/Crash'
     pod 'GoogleSignIn'
 end
