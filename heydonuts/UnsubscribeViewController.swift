@@ -66,8 +66,11 @@ class UnsubscribeViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 }
             }
             
-            self.channelsPicker.reloadAllComponents()
-            
+            DispatchQueue.global(qos: .userInitiated).async{
+                DispatchQueue.main.async{
+                    self.channelsPicker.reloadAllComponents()
+                }
+            }
         })
         
         task.resume()

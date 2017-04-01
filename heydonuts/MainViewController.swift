@@ -122,9 +122,17 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     self.channels.append(channelName)
                 }
             }
-            self.channelPicker.reloadAllComponents()
+            
+            DispatchQueue.global(qos: .userInitiated).async{
+                DispatchQueue.main.async{
+                    self.channelPicker.reloadAllComponents()
+                }
+            }
+            
         })
         task.resume()
     }
+    
+
     
 }

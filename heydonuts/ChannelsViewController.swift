@@ -32,6 +32,7 @@ class ChannelsViewController : UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         return channels[row]
     }
     
@@ -66,8 +67,11 @@ class ChannelsViewController : UIViewController, UIPickerViewDataSource, UIPicke
                 }
             }
             
-            self.channelsPicker.reloadAllComponents()
-            
+            DispatchQueue.global(qos: .userInitiated).async{
+                DispatchQueue.main.async{
+                    self.channelsPicker.reloadAllComponents()
+                }
+            }
         })
         
         task.resume()
