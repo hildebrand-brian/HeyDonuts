@@ -19,23 +19,26 @@ class NewChannelViewController: UIViewController{
             AddAndSubscribeToChannel(channelName: channelName)
             self.navigationController!.popToRootViewController(animated: true)
         }
-    
     }
     
     func AddAndSubscribeToChannel(channelName: String) {
         
         let slightlyFixedChannelName = channelName.replacingOccurrences(of: " ", with: "-")
         
-        let urlString : String = "https://dasnetwork.herokuapp.com/v1/channel/add?UserName=\(self.userName)&Channel=\(slightlyFixedChannelName)"
+        let body: [String: String] = ["UserName": "\(self.userName)", "Channel": "\(slightlyFixedChannelName)"]
+        let jsonBody = try? JSONSerialization.data(withJSONObject: body)
+        
+        let urlString : String = Config.createNewChannelURL
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         
         let session = URLSession.shared
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("4duIyZ4lYE5448rAueRVB3Y92uWidl5V", forHTTPHeaderField: "DasKey")
+        request.addValue(Config.dasKey, forHTTPHeaderField: "DasKey")
+        request.httpBody = jsonBody
         
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")

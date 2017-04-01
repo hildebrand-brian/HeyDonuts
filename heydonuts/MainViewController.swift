@@ -36,7 +36,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             self.username = "Unknown User"
         }
         
-        let urlString : String = "https://dasnetwork.herokuapp.com/v1/message/send?UserName=\(self.username!)&Channel=\(recipients)"
+        let urlString : String = "https://dasnetwork.herokuapp.com/v1/message/send?UserName=\(self.username!)&Channel=\(recipients)?Key=4duIyZ4lYE5448rAueRVB3Y92uWidl5V"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -45,6 +45,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("4duIyZ4lYE5448rAueRVB3Y92uWidl5V", forHTTPHeaderField: "Key")
+        
         
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")})
@@ -89,7 +91,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func callChannelsService(token: String){
-        let urlString : String = "https://dasnetwork.herokuapp.com/subscription/list/?Key=4duIyZ4lYE5448rAueRVB3Y92uWidl5V&Token=\(token)"
+        let urlString : String = Config.getSubscribedChannelsURL
+        //let urlString : String = "https://dasnetwork.herokuapp.com/subscription/list/?Key=4duIyZ4lYE5448rAueRVB3Y92uWidl5V&Token=\(token)"
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -98,12 +101,14 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("4duIyZ4lYE5448rAueRVB3Y92uWidl5V", forHTTPHeaderField: "DasKey")
+        request.addValue("\(Config.dasKey)", forHTTPHeaderField: "DasKey")
+        let tokenBase64 = Data(token.utf8).base64EncodedString()
+        request.addValue("\(tokenBase64)", forHTTPHeaderField: "Token")
         
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")
             self.channels = []
-            
+            self.channelPicker.reloadAllComponents()
             if error != nil {
                 print("Error retrieving channels")
                 // how do I pop this up?
@@ -121,7 +126,5 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         })
         task.resume()
     }
-    
-
     
 }

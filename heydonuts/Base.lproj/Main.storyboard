@@ -67,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rw8-l3-SJB">
-                                <rect key="frame" x="97.5" y="112" width="180" height="180"/>
+                                <rect key="frame" x="98" y="112" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="Cvw-9R-Voz"/>
                                     <constraint firstAttribute="width" constant="180" id="PA7-OV-Lmh"/>
@@ -152,7 +152,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Edit Channels" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zST-Lh-K0E">
-                                <rect key="frame" x="114.5" y="144" width="145" height="30"/>
+                                <rect key="frame" x="115" y="144" width="145" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -201,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRw-IU-qJl">
-                                <rect key="frame" x="27.5" y="206" width="320" height="216"/>
+                                <rect key="frame" x="28" y="206" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vQK-CA-kvA" id="DDv-zh-ovO"/>
                                     <outlet property="delegate" destination="vQK-CA-kvA" id="ht0-Ko-L5a"/>
@@ -215,7 +215,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unsubscribe from Channel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-5q-FDI">
-                                <rect key="frame" x="68.5" y="126" width="239" height="24"/>
+                                <rect key="frame" x="69" y="126" width="239" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -252,7 +252,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-3r-LLR">
-                                <rect key="frame" x="146" y="119" width="84.5" height="24"/>
+                                <rect key="frame" x="146" y="119" width="85" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
