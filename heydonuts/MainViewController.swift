@@ -18,6 +18,12 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBOutlet weak var channelPicker: UIPickerView!
     
+    @IBOutlet weak var refreshSubscriptionsBtn: UIButton!
+    @IBAction func refreshSubscriptionsButton(_ sender: Any) {
+        
+        getChannelsSubscribedTo()
+        
+    }
     @IBAction func HeyDonutsOnClick(_ sender: Any) {
         
         if (channels.count == 0){
@@ -69,7 +75,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     override func viewDidLoad() {
-
+        refreshSubscriptionsBtn.showsTouchWhenHighlighted = true
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -100,10 +100,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7M-eV-OQA" userLabel="RefreshButton">
+                                <rect key="frame" x="319" y="584" width="20" height="20"/>
+                                <accessibility key="accessibilityConfiguration" identifier="refreshSubscriptionsButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="RDY-OH-rAC"/>
+                                    <constraint firstAttribute="width" constant="20" id="jY4-iX-WYk"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="RefreshIcon"/>
+                                <connections>
+                                    <action selector="refreshSubscriptionsButton:" destination="QMi-jl-1sk" eventType="touchUpInside" id="YL8-TK-VaH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration" identifier="mainViewController"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="a7M-eV-OQA" secondAttribute="trailing" constant="20" id="1Sz-E7-UU5"/>
                             <constraint firstItem="x8X-fp-fi6" firstAttribute="top" secondItem="zbj-dd-u6e" secondAttribute="bottom" constant="-1" id="3VV-Lz-EeM"/>
                             <constraint firstItem="0nk-Sd-Awx" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="4Hu-GO-aMC"/>
                             <constraint firstItem="rw8-l3-SJB" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="Htg-sb-XJV"/>
@@ -112,16 +125,18 @@
                             <constraint firstItem="0nk-Sd-Awx" firstAttribute="top" secondItem="x8X-fp-fi6" secondAttribute="bottom" constant="1" id="fG6-xK-FCr"/>
                             <constraint firstItem="rw8-l3-SJB" firstAttribute="top" secondItem="xXd-8M-dRx" secondAttribute="bottom" constant="48" id="lxy-ct-Qcf"/>
                             <constraint firstItem="zbj-dd-u6e" firstAttribute="centerX" secondItem="Hgn-jY-BF4" secondAttribute="centerX" id="sdg-Zx-a5i"/>
+                            <constraint firstItem="a7M-eV-OQA" firstAttribute="top" secondItem="x8X-fp-fi6" secondAttribute="bottom" constant="6" id="ttW-O4-752"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uwk-1Q-NHx"/>
                     <connections>
                         <outlet property="channelPicker" destination="x8X-fp-fi6" id="Tby-Kk-DGB"/>
+                        <outlet property="refreshSubscriptionsBtn" destination="a7M-eV-OQA" id="pYU-bq-bBm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFZ-oC-4Xi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="141"/>
+            <point key="canvasLocation" x="957.60000000000002" y="140.77961019490255"/>
         </scene>
         <!--Edit Channels View Controller-->
         <scene sceneID="Khb-qU-xFL">
@@ -403,5 +418,6 @@
     </scenes>
     <resources>
         <image name="Red-circle-transparent-1024x1006" width="1024" height="1006"/>
+        <image name="RefreshIcon" width="128" height="128"/>
     </resources>
 </document>
