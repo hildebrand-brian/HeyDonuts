@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseCore
 import FirebaseMessaging
 
@@ -27,8 +28,12 @@ class UnsubscribeViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        getChannels()
         
+        let token = FIRInstanceID.instanceID().token()
+        
+        if let unwrappedToken = token{
+            getChannels(token: unwrappedToken)
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -43,8 +48,8 @@ class UnsubscribeViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return 1
     }
     
-    func getChannels() {
-        let urlString : String = "https://dasnetwork.herokuapp.com/v1/channel/list?Key=4duIyZ4lYE5448rAueRVB3Y92uWidl5V"
+    func getChannels(token: String) {
+        let urlString : String = Config.getSubscribedChannelsURL
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -53,16 +58,20 @@ class UnsubscribeViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("\(Config.dasKey)", forHTTPHeaderField: "DasKey")
+        
+        let tokenBase64 = Data(token.utf8).base64EncodedString()
+        request.addValue("\(tokenBase64)", forHTTPHeaderField: "Token")
+        
         
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")
-            
+            self.channels = []
             let json = try? JSONSerialization.jsonObject(with: data!, options: [])
             
-            if let entries = json as? [[String:Any]] {
-                self.channels = []
-                for entry in entries {
-                    self.channels.append(entry["key"] as! String)
+            if let entries = json as? [String:Any] {
+                for (channelName,_) in entries {
+                    self.channels.append(channelName)
                 }
             }
             

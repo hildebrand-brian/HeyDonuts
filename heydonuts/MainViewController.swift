@@ -92,7 +92,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func callChannelsService(token: String){
         let urlString : String = Config.getSubscribedChannelsURL
-        //let urlString : String = "https://dasnetwork.herokuapp.com/subscription/list/?Key=4duIyZ4lYE5448rAueRVB3Y92uWidl5V&Token=\(token)"
+        
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -108,7 +108,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")
             self.channels = []
-            self.channelPicker.reloadAllComponents()
+            
             if error != nil {
                 print("Error retrieving channels")
                 // how do I pop this up?
