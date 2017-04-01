@@ -36,17 +36,19 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             self.username = "Unknown User"
         }
         
-        let urlString : String = "https://dasnetwork.herokuapp.com/v1/message/send?UserName=\(self.username!)&Channel=\(recipients)?Key=4duIyZ4lYE5448rAueRVB3Y92uWidl5V"
+        let urlString : String = Config.sendMessageURL
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         
         let session = URLSession.shared
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("4duIyZ4lYE5448rAueRVB3Y92uWidl5V", forHTTPHeaderField: "Key")
+        request.addValue(Config.dasKey, forHTTPHeaderField: "DasKey")
         
+        let bodyData: [String:Any] = ["UserName": "\(self.username!)", "Channel": "\(recipients)"]
+        request.httpBody = try? JSONSerialization.data(withJSONObject: bodyData, options: .prettyPrinted)
         
         let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")})

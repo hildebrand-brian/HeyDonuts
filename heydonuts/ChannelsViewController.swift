@@ -45,7 +45,7 @@ class ChannelsViewController : UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func getChannels() {
-        let urlString : String = "https://dasnetwork.herokuapp.com/v1/channel/list"
+        let urlString : String = Config.getAllChannelsURL
         let url: URL = URL(string: urlString)!
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"

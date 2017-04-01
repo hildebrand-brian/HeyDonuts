@@ -322,8 +322,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFu-fb-62E">
-                                <rect key="frame" x="113" y="318" width="149" height="30"/>
-                                <state key="normal" title="Create and Subscribe"/>
+                                <rect key="frame" x="117" y="318" width="141" height="30"/>
+                                <state key="normal" title="Create New Channel"/>
                                 <connections>
                                     <action selector="createAndSubscribeButton:" destination="op4-z2-9my" eventType="touchUpInside" id="czi-BS-sPK"/>
                                 </connections>
@@ -388,7 +388,7 @@
         <scene sceneID="2nr-f3-v2r">
             <objects>
                 <navigationController storyboardIdentifier="mainNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ty6-nw-6ML" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oOJ-i3-15S">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="oOJ-i3-15S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
