@@ -12,6 +12,8 @@
 		52D282EE1E51DD20000A78A7 /* EditChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D282ED1E51DD20000A78A7 /* EditChannelsViewController.swift */; };
 		52D282F01E51DE25000A78A7 /* UnsubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D282EF1E51DE25000A78A7 /* UnsubscribeViewController.swift */; };
 		52D282F21E51E002000A78A7 /* CurrentChannelAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D282F11E51E002000A78A7 /* CurrentChannelAccessObject.swift */; };
+		52D2F93B1E9326250096837E /* OrganizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2F93A1E9326250096837E /* OrganizationViewController.swift */; };
+		52D2F93E1E932B7C0096837E /* OrganizationDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2F93D1E932B7C0096837E /* OrganizationDataAccessObject.swift */; };
 		52D598031E4431660023910E /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D598021E4431660023910E /* ChannelsViewController.swift */; };
 		52DA73A71E2D3B5700272DB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA73A61E2D3B5700272DB8 /* AppDelegate.swift */; };
 		52DA73A91E2D3B5700272DB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA73A81E2D3B5700272DB8 /* ViewController.swift */; };
@@ -31,6 +33,8 @@
 		52D282ED1E51DD20000A78A7 /* EditChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditChannelsViewController.swift; sourceTree = "<group>"; };
 		52D282EF1E51DE25000A78A7 /* UnsubscribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsubscribeViewController.swift; sourceTree = "<group>"; };
 		52D282F11E51E002000A78A7 /* CurrentChannelAccessObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentChannelAccessObject.swift; sourceTree = "<group>"; };
+		52D2F93A1E9326250096837E /* OrganizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationViewController.swift; sourceTree = "<group>"; };
+		52D2F93D1E932B7C0096837E /* OrganizationDataAccessObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDataAccessObject.swift; sourceTree = "<group>"; };
 		52D598021E4431660023910E /* ChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		52DA73A31E2D3B5700272DB8 /* heydonuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = heydonuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DA73A61E2D3B5700272DB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		52D2F93C1E932B520096837E /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				52D2F93D1E932B7C0096837E /* OrganizationDataAccessObject.swift */,
+			);
+			name = DataAccess;
+			sourceTree = "<group>";
+		};
 		52DA739A1E2D3B5700272DB8 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +99,7 @@
 		52DA73A51E2D3B5700272DB8 /* heydonuts */ = {
 			isa = PBXGroup;
 			children = (
+				52D2F93C1E932B520096837E /* DataAccess */,
 				52F900721E4113A2005C8C29 /* heydonuts.entitlements */,
 				52F9006E1E3E41B0005C8C29 /* GoogleService-Info.plist */,
 				52DA73A61E2D3B5700272DB8 /* AppDelegate.swift */,
@@ -102,6 +115,7 @@
 				52D282EF1E51DE25000A78A7 /* UnsubscribeViewController.swift */,
 				52D282F11E51E002000A78A7 /* CurrentChannelAccessObject.swift */,
 				5223E1D61E8DDCB300EE7FFA /* config.swift */,
+				52D2F93A1E9326250096837E /* OrganizationViewController.swift */,
 			);
 			path = heydonuts;
 			sourceTree = "<group>";
@@ -269,6 +283,8 @@
 				52DA73A91E2D3B5700272DB8 /* ViewController.swift in Sources */,
 				5223E1D71E8DDCB300EE7FFA /* config.swift in Sources */,
 				52D598031E4431660023910E /* ChannelsViewController.swift in Sources */,
+				52D2F93B1E9326250096837E /* OrganizationViewController.swift in Sources */,
+				52D2F93E1E932B7C0096837E /* OrganizationDataAccessObject.swift in Sources */,
 				52DA73A71E2D3B5700272DB8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E98E5BFEBC51533541C3186B /* Pods-heydonuts.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = heydonuts/heydonuts.entitlements;
 				DEVELOPMENT_TEAM = FR7DDWA7BQ;
@@ -412,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2783B77B99DBCF62DFF2CA58 /* Pods-heydonuts.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = heydonuts/heydonuts.entitlements;
 				DEVELOPMENT_TEAM = FR7DDWA7BQ;

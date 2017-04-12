@@ -14,5 +14,6 @@ struct Config {
     static let getSubscribedChannelsURL = "https://dasnetwork.herokuapp.com/v1/subscription/list"
     static let getAllChannelsURL = "https://dasnetwork.herokuapp.com/v1/channel/list"
     static let sendMessageURL = "https://dasnetwork.herokuapp.com/v1/message/send"
+    static let OrganizationSignInURL = "https://dasnetwork.herokuapp.com/v1/key/request"
     
 }
