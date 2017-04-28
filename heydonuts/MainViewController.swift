@@ -118,8 +118,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             self.channels = []
             
             if error != nil {
-                print("Error retrieving channels")
-                // how do I pop this up?
+                self.DisplayErrorWhenCantGetChannels()
                 return
             }
             
@@ -141,6 +140,15 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         task.resume()
     }
     
-
+    func DisplayErrorWhenCantGetChannels(){
+        let alert = UIAlertController(title: "Error Getting Channels", message: "There was an error getting the channels...please try again!", preferredStyle: .alert)
+        let firstAction = UIAlertAction(title: "Ok", style: .default) { (alert: UIAlertAction!) -> Void in
+            NSLog("Ok pressed for error getting channels")
+        }
+        
+        alert.addAction(firstAction)
+        present(alert, animated: true, completion:nil)
+    }
+    
     
 }
